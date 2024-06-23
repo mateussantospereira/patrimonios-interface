@@ -1,0 +1,17 @@
+.error {
+    height: 100vh !important;
+    width: 100vw !important;
+    background-color: var(--background-color-content);
+}
+
+#error404 {
+    font-size: 30vh !important;
+    margin: 2vh 0 !important;
+}
+
+#footer-error {
+    margin: 4vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

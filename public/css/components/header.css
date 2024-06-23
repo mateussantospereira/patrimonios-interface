@@ -1,0 +1,27 @@
+header {
+    height: 8vh !important;
+    background-color: rgb(42, 42, 42) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+header div {
+    padding: 1vh 2vw;
+    display: flex;
+    align-items: center;
+}
+
+header button {
+    color: white;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    background-color: transparent;
+    letter-spacing: 1px;
+}
+
+header button:hover {
+    color: rgb(151, 151, 151);
+}

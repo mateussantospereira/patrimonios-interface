@@ -1,0 +1,36 @@
+.form {
+    max-width: 50vw;
+}
+
+.form-column {
+    margin: 2vh 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-column div {
+    width: 270px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 270px;
+}
+
+label {
+    margin-bottom: 4vh;
+}
+
+.form-column input {
+    margin-top: 0.5vh;
+    margin-bottom: 2vh;
+}
+
+.submit {
+    margin-top: 0.5vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: end;
+}

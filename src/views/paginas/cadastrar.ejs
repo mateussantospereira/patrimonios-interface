@@ -1,0 +1,52 @@
+
+<h2 class="title">Cadastro de Patrimônio</h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div>
+    <form id="form">
+        <div class="form">
+            <div class="form-column">
+                <%- include('../components/input', {
+                    label: "Número de inventário:" , type: "text" , value: "" , id: "ni" }) %>
+                <%- include('../components/input', {
+                    label: "Instituição:" , type: "text" , value: "" , id: "instituicao" }) %>
+                <%- include('../components/input', {
+                    label: "Tag:" , type: "text" , value: "" , id: "tag" }) %>
+                <%- include('../components/input', {
+                    label: "Descrição:" , type: "text" , value: "" , id: "descricao" }) %>
+                <%- include('../components/input', {
+                    label: "Data da incorporação:" , type: "date" , value: "" , id: "incorporacao" }) %>
+                <%- include('../components/input', {
+                    label: "Marca:" , type: "text" , value: "" , id: "marca" }) %>
+                <%- include('../components/input', {
+                    label: "Série:" , type: "text" , value: "" , id: "serie" }) %>
+                <%- include('../components/input', {
+                    label: "Valor:" , type: "text" , value: "" , id: "valor" }) %>
+                <%- include('../components/input', {
+                    label: "Sala:" , type: "text" , value: "" , id: "sala" }) %>
+                <%- include('../components/input', {
+                    label: "Local:" , type: "text" , value: "" , id: "localizacao" }) %>
+                <%- include('../components/input', {
+                    label: "Ativo:" , type: "text" , value: "" , id: "ativo" }) %>
+                <%- include('../components/input', {
+                    label: "Observação:" , type: "text" , value: "" , id: "obs" }) %>
+            </div>
+
+            <div class="submit">
+                <button class="secondary">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+                
+
+<script>
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        fetchRedirect("/patrimonio/criar", "POST", form, "/listar");
+    });
+</script>

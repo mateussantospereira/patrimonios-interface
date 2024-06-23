@@ -1,0 +1,15 @@
+<h2 class="title">Deletar todos os Patrimônios</h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div>
+    <p>
+        Ao confirmar a deleção de todos os patrimônios eles não poderão ser mais recuperados.
+    </p>
+</div>
+
+<div class="start">
+    <%- include('../components/boxDelete', { label: "Confirme a deleção de todos os patrimônios:" ,
+    button: "Deletar todos os patrimônios" , route: `/patrimonio/truncar`, redirect: "/listar" })
+    %>
+</div>

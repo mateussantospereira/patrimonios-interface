@@ -1,0 +1,55 @@
+#search {
+    margin: 1vh 0;
+}
+
+#type-search {
+    width: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#type-search button {
+    border: solid 1px black;
+    padding: 0.8vh 0.5vw;
+    min-width: 5vw;
+    background-color: transparent;
+    border-bottom: 0 !important;
+    margin: 1vh 0 !important;
+}
+
+#type-search button:hover {
+    background-color: white !important;
+}
+
+.primary:hover {
+    background-color: var(--color-main-1);
+    -webkit-text-fill-color: white;
+}
+
+#numberSearch {
+    width: 35vw;
+}
+
+#numberSearch input[type="number"] {
+    width: 80px;
+}
+
+#numberSearch #numbers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh !important;
+    margin-bottom: 2vh !important;
+}
+
+#buscar {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2vh;
+}
+
+#index-button {
+    width: 35vw;
+    display: flex;
+    flex-direction: row-reverse;
+}

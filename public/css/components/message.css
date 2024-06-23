@@ -1,0 +1,6 @@
+#message {
+    max-width: 60vw;
+    border: solid 1px;
+    padding: 1vh;
+    background-color: var(--color-message-1);
+}

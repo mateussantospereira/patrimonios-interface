@@ -1,0 +1,51 @@
+<h2 class="title">Atualizar patrimônio n° <%= body.id %></h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div class="form">
+    <form id="form">
+
+        <div class="form-column"></div>
+
+        <div class="submit">
+            <button class="secondary">Atualizar</button>
+        </div>
+    </form>
+
+    <div class="end">
+        <%- include('../components/boxDelete', { label: "Confirme a exclusão do patrimônio:" , button: "Deletar" ,
+            route: `/patrimonio/deletar/${body.id}`, redirect: "/listar" }) %>
+    </div>
+</div>
+
+<p class="content-margin">Margin</p>
+
+
+<script src="/public/js/scripts.js"></script>
+
+<script>
+    const id = '<%= body.id %>';
+    const form = document.getElementById("form")
+    const head = {
+        instituicao: { label: "Instituição:", tag: { name: "input", type: "text" } },
+        tag: { label: "Tag:", tag: { name: "input", type: "text" } },
+        descricao: { label: "Descrição:", tag: { name: "input", type: "text" } },
+        incorporacao: { label: "Data de incorporação:", tag: { name: "input", type: "date" } },
+        marca: { label: "Marca:", tag: { name: "input", type: "text" } },
+        serie: { label: "Série:", tag: { name: "input", type: "text" } },
+        valor: { label: "Valor:", tag: { name: "input", type: "text" } },
+        sala: { label: "Sala:", tag: { name: "input", type: "text" } },
+        localizacao: { label: "Local:", tag: { name: "input", type: "text" } },
+        ativo: { label: "Ativo:", tag: { name: "input", type: "text" } },
+        obs: { label: "Observação:", tag: { name: "input", type: "text" } },
+        qrcode: { label: "Código QR:", tag: { name: "img" } }
+    };
+
+    getDataForInputs(`/patrimonio/buscar/${id}`, head);
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        fetchRedirect(`/patrimonio/atualizar/${id}`, "PUT", form, "/listar");
+    });
+</script>

@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-main-1: #af0606;
+
+    --color-a-1: rgb(255, 157, 0);
+
+    --color-message-1: rgb(237, 230, 163);
+
+    --background-color-content: rgb(219, 219, 219);
+
+    --background-color-bar: rgb(163, 163, 163);
+
+
+    --color-validate-footer: rgb(255, 230, 157);
+    --color-validate-a: rgb(255, 203, 45);
+
+    --font-family: "Roboto", sans-serif;
+    --font-size: 16px;
+}

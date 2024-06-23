@@ -1,0 +1,23 @@
+urlencoded
+
+registro:
+
+nome:Mateus
+email:mateus@gmail.com
+senha:12
+
+patrimonio:
+
+n_inventario:1038852,
+dt_incorporacao:2012-05-22,
+denominacao_do_imobilizado:CADEIRA GIRATÓRIA S/BRAÇOS ROYAL/TIRMIS,
+localizacao:20930112,
+ambiente:Sala de aula,
+codigo:E136
+
+n_inventario
+dt_incorporacao
+denominacao_do_imobilizado
+localizacao
+ambiente
+codigo

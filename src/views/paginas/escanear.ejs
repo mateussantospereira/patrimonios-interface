@@ -1,0 +1,46 @@
+<h2 class="title">Escaneamento de patrimônios</h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div class="center">
+    <video id="preview" style="display: none;"></video>
+</div>
+
+
+<script src="/public/js/instascan.min.js"></script>
+
+<script>
+    const video = document.getElementById('preview');
+    const message = document.getElementById("message");
+
+    async function buscar(codigo) {
+        const response = await fetch(`/patrimonio/buscar/${codigo}`);
+        const json = await response.json();
+
+        redirecionar(json, `/atualizar/${codigo}`);
+    }
+
+    function escanear() {
+        let scanner = new Instascan.Scanner(
+            { video: video }
+        );
+
+        Instascan.Camera.getCameras().then((cameras) => {
+            scanner.start(cameras[0]);
+            video.style.display = "block";
+        }).catch(error => {
+            erro("Erro ao buscar câmera neste dispositivo.");
+        });
+
+        scanner.addListener('scan', (content) => {
+            let numero = content.split(" - ")[0];
+            if (Number(numero) > 0) {
+                buscar(numero);
+            } else {
+                erro("Erro. Este código não corresponde com os padrões da empresa SENAI.");
+            }
+        });
+    }
+
+    escanear();
+</script>

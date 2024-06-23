@@ -1,0 +1,26 @@
+input[type="text"],
+input[type="password"] {
+    height: 3vh;
+    border: solid 1px rgb(107, 107, 107);
+    background-color: white !important;
+}
+
+input:autofill {
+    -webkit-text-fill-color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px #fff0d8 inset;
+    font-size: var(--font-size);
+}
+
+input[type="file"]::file-selector-button {
+    border: solid 1px;
+    border-color: var(--color-2) !important;
+    font-weight: 500;
+    padding: 0.8vh 0.5vw;
+    background-color: rgb(156, 156, 156);
+    color: var(--color-1);
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: rgb(192, 192, 192);
+    -webkit-text-fill-color: black;
+}

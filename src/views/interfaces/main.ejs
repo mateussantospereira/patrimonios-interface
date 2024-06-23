@@ -1,0 +1,17 @@
+<body>
+    <%- include('../components/header') %>
+
+    <main>
+        <div class="main">
+            <div class="content">
+                <div class="content-main">
+                    <%- include(`../paginas/${body.body}`, { body: body }) %>
+                </div>
+            </div>
+
+            <%- include('../components/buttons') %>
+        </div>
+    </main>
+
+    <%- include('../components/footer') %>
+</body>

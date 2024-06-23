@@ -1,0 +1,41 @@
+button {
+    font-family: var(--font-family);
+}
+
+.primary {
+    border: solid 1px black;
+    padding: 0.8vh 0.5vw;
+    min-width: 5vw;
+}
+
+.primary:hover {
+    background-color: var(--color-main-1);
+    -webkit-text-fill-color: white;
+}
+
+.secondary {
+    border: solid 1px black;
+    background-color: black;
+    -webkit-text-fill-color: white;
+    padding: 0.8vh 0.5vw;
+    min-width: 5vw;
+}
+
+.secondary:hover {
+    background-color: var(--color-main-1);
+    -webkit-text-fill-color: white;
+}
+
+.third {
+    border: solid 1px black;
+    padding: 0.8vh 0.5vw;
+    min-width: 5vw;
+    background-color: var(--color-main-1);
+    -webkit-text-fill-color: white;
+}
+
+.third:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}

@@ -1,0 +1,22 @@
+insert into db_patrimonios.registros (nome, email, senha) values 
+("Mateus dos Santos Pereira", "mateus@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("João Sebastião", "sebastiao@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("José Geraldo", "geraldo@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("Pedro de Alcântara", "pedro@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("João Carlos Leopoldo", "joao@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("Francisco Xavier de Paula", "francisco@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("Leocádio Miguel", "leocadio@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi"),
+("Gabriel Rafael Gonzaga", "rafael@gmail.com", "$2a$08$FoihNm9J11pFPOJiWZ/WLOJN7KNqjbZG0GCF8Ow37Ccmr7DkFxQFi");
+
+insert into db_patrimonios.patrimonios (
+    ni, instituicao, tag, descricao, incorporacao, marca, serie, valor, sala, localizacao, ativo, obs, qrcode
+) values 
+(1038852, "SENAI", "WCK8D367", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038853, "SENAI", "WCK8D368", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038854, "SENAI", "WCK8D369", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038855, "SENAI", "WCK8D370", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038856, "SENAI", "WCK8D371", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038857, "SENAI", "WCK8D372", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038858, "SENAI", "WCK8D373", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038859, "SENAI", "WCK8D374", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null"),
+(1038860, "SENAI", "WCK8D375", "COMPUTADOR DELL INSPIRION", "2012-05-22", "DELL", "INSPIRION", "R$ 2.000,00", "A9", "Bloco A", "Ativo", "Null", "Null");

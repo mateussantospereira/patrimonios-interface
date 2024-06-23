@@ -1,0 +1,70 @@
+<div class="uso">
+    <div class="center">
+        <div class="text-uso">
+            <div class="center">
+                <h2 class="title">Condições de uso</h2>
+            </div>
+
+            <div class="center">
+                <a href="/">Ir para o início</a>
+            </div>
+
+            <div id="text"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const divUso = document.getElementById("text");
+
+    getText();
+
+    async function getText() {
+        const read = await fetch("/read");
+        const text = await read.text();
+
+        let lines = text.split("\r\n");
+
+        getHTML(lines);
+    }
+
+    function getHTML(lines) {
+        let htmlText = "";
+
+        lines.forEach((line) => {
+            if (line == "") {
+                return;
+            }
+
+            if (line.slice(0, 1)[0] == "<") {
+                return htmlText = htmlText + line;
+            }
+
+            if (line.includes("#")) {
+                let number = 0;
+                let substring = line.split("")
+
+                substring = substring.filter((character) => {
+                    if (character == "#") {
+                        number++;
+                    }
+                    return character != "#";
+                });
+
+                let text = substring.join("").trim();
+
+                if (number != 0) {
+                    return htmlText = htmlText + `
+                        <h${number}>${text}</h${number}>
+                    `;
+                }
+            }
+
+            return htmlText = htmlText + `
+                <p>${line}</p>
+            `;
+        });
+
+        divUso.innerHTML = htmlText;
+    }
+</script>

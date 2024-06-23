@@ -1,0 +1,92 @@
+.box-table {
+    width: auto;
+    display: flex;
+    margin: 1vh 0;
+}
+
+.table {
+    max-height: 67vh;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.table::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(178, 178, 178);
+}
+
+.table::-webkit-scrollbar-thumb {
+    height: 4px;
+    border-radius: 0px;
+    width: 3px;
+    background-color: rgb(102, 102, 102);
+}
+
+.table table {
+    border: solid 1px;
+    border: solid 1px;
+    padding: 0 !important;
+    text-indent: initial;
+    border-spacing: 1px !important;
+    height: 100%;
+}
+
+thead {
+    border: solid 1px black !important;
+}
+
+td,
+th {
+    border: solid 1px black !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    height: 100% !important;
+    
+}
+
+td p,
+th p {
+    margin: 0 !important;
+    padding: 0.8vh 0.5vw;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: wrap;
+}
+
+td {
+    height: 40% !important;
+}
+
+td a {
+    height: 100%;
+    height: 100%;
+    padding: 0 !important;
+}
+
+td button {
+    width: 100%;
+    height: 100%;
+    padding: 0.8vh 0.5vw;
+    background-color: rgb(197, 197, 197);
+    border: 0 !important;
+    font-size: 16px !important;
+}
+
+td button:hover {
+    background-color: var(--color-main-1);
+    color: white;
+}
+
+th {
+    top: 0%;
+    background-color: var(--color-main-1);
+    position: sticky;
+    color: white;
+}
+
+td {
+    background-color: white;
+}

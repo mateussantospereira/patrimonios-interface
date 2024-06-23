@@ -1,0 +1,52 @@
+<h2 class="title">Impressão de Patrimônios</h2>
+
+<% if (body.tabela["status"] == 200) { %>
+
+    <%- include('../components/message', { value: "" }) %>
+
+    <%- include('../components/boxSearch', { button: 'imprimir' , text: 'Imprimir lista' }) %>
+
+    <%- include('../components/patrimonios', { tabela: body.tabela, update: false }) %>
+
+<% } else { %>
+
+    <div>
+        <p id="message"><%= body.tabela["message"] %></p>
+    </div>
+
+<% } %>
+
+<script>
+    const boxSearchButton = document.getElementById("boxSearchButton");
+
+    async function openFile(url) {
+        const response = fetch(url)
+            .then((chunk) => { return chunk.blob() })
+            .then(async (data) => {
+                let url = URL.createObjectURL(data);
+                await finishLoading(() => {
+                    window.open(url).print();
+                }, boxSearchButton);
+            });
+    }
+
+    async function imprimir(list) {
+        const response = await fetchUrlencoded("/patrimonio/imprimir", "POST", list, true);
+        
+        if (response.error == false) {
+            openFile(response.data);
+        } else {
+            await finishLoading(() => {
+                erro(response.message);
+            }, boxSearchButton);
+        };
+    };
+
+    if (boxSearchButton) {
+        boxSearchButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            enviarLista(imprimir);
+        });
+    };
+</script>

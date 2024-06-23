@@ -1,0 +1,55 @@
+<body>
+    <div class="box-validate">
+        <div>
+            <div class="form-validate">
+                <div class="center">
+                    <img src="/public/img/logo_senai_preto.png">
+                </div>
+    
+                <div class="center">
+                    <h2 class="title" id="title-validate">Validação</h2>
+                </div>
+    
+                <div class="center">
+                    <%- include('../components/message', { value: "" }) %>
+                </div>
+    
+                <div class="center">
+                    <form id="form">
+                        <%- include('../components/input', {
+                            label: "E-mail:" , type: "text" , value: "" , id: "email" }) %>
+                        <%- include('../components/input', {
+                            label: "Senha:" , type: "password" , value: "" , id: "senha" }) %>
+        
+                        <div class="center">
+                            <button class="secondary">Validar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="footer-validate">
+                <%- include('../components/footerText') %>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const form = document.getElementById("form");
+    const out = "<%= body.out %>";
+
+    if (out == "true") {
+        if (localStorage.getItem("nome") && localStorage.getItem("email")) {
+            localStorage.removeItem("nome");
+            localStorage.removeItem("email");
+        }
+
+        window.location.replace("/validar")
+    }
+    
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        fetchRedirect("/registro/validar", "POST", form, "/listar", null, true);
+    });
+</script>

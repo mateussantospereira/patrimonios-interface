@@ -1,0 +1,34 @@
+{
+  "name": "patrimonios-interface",
+  "version": "1.0.0",
+  "description": "Esta é uma aplicação para o gerenciamento dos patrimônios da empresa Senai Shunji Nishimura. Nesta aplicação é possível a visualização dos patrimônios, o cadastro destes, o escaneamento com a câmera, a atualização, a importação por um arquivo XLSX, a exportação para este mesmo tipo de arquivo e também a impressão dos códigos QR, atribuídos a cada patrimônio, além do  gerenciamento dos registros dos usuários.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "javascript",
+    "ejs",
+    "sql"
+  ],
+  "author": "Mateus dos Santos Pereira",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateussantospereira/patrimonios-interface.git"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "html-pdf": "^3.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "node-schedule": "^2.1.1",
+    "qrcode": "^1.5.3",
+    "xlsx": "^0.18.5"
+  }
+}

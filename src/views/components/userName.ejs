@@ -1,0 +1,15 @@
+<a id="ancora">
+    <button id="user-name"></button>
+</a>
+
+<script>
+    const ancora = document.getElementById("ancora");
+    const userName = document.getElementById("user-name");
+    const nome = localStorage.getItem("nome");
+    const em = localStorage.getItem("email");
+    
+    if (nome && em) {
+        userName.innerHTML = nome;
+        ancora.href = `/modificar/${em}`;
+    }
+</script>

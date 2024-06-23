@@ -1,0 +1,17 @@
+<h2 class="title">Listagem de Patrimônios</h2>
+
+<% if (body.tabela["status"]==200) { %>
+
+    <%- include('../components/search', { placeholder: "Procurar patrimônio" }) %>
+
+    <%- include('../components/patrimonios', { tabela: body.tabela, update: true }) %>
+
+<% } else { %>
+
+    <div>
+        <p id="message">
+            <%= body.tabela["message"] %>
+        </p>
+    </div>
+
+<% } %>

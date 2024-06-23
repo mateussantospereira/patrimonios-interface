@@ -1,0 +1,11 @@
+<body>
+    <%- include('../components/header') %>
+
+    <main>
+        <div class="main">
+            <%- include(`../paginas/${body.body}`, { body: body }) %>
+        </div>
+    </main>
+
+    <%- include('../components/footer') %>
+</body>

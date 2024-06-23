@@ -1,0 +1,42 @@
+.box-validate {
+    width: 100%;
+    height: 100vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../img/senai-pompeia.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
+
+img {
+    width: 160px;
+}
+
+#title-validate {
+    margin: 2vh 0 !important;
+}
+
+.form-validate {
+    padding: 2vh 1vw;
+    border: solid 1px rgba(42, 42, 42, 0.451);
+    background-color: rgba(46, 46, 46, 0.201);
+}
+
+.form-validate input {
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+}
+
+.form-validate button {
+    margin-top: 1.5vh;
+}
+
+#footer-validate {
+    margin-top: 4vh !important;
+    color: var(--color-validate-footer);
+}
+
+#footer-validate a {
+    color: var(--color-validate-a);
+}

@@ -1,0 +1,25 @@
+<div class="box-table">
+    <div class="table">
+        <% head = {
+            ni: "Nº invent.",
+            instituicao: "Instituição" ,
+            tag: "Tag" ,
+            descricao: "Descrição" ,
+            marca: "Marca",
+            serie: "Série",
+            sala: "Sala" ,
+            localizacao: "Local" ,
+            ativo: "Ativo" ,
+        } %>
+
+        <% if (update) { %>
+            <% head.atualizacao = "Atualização" %>
+        <% } %>
+
+        <%- include('./tabela', {
+            head: head,
+
+            tabela: tabela["data"]
+        }) %>
+    </div>
+</div>

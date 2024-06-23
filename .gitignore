@@ -1,0 +1,13 @@
+node_modules/
+package-lock.json
+
+public/qrcodes/1*.png
+public/qrcodes/2*.png
+public/qrcodes/3*.png
+public/qrcodes/4*.png
+public/qrcodes/5*.png
+public/qrcodes/6*.png
+public/qrcodes/7*.png
+public/qrcodes/8*.png
+public/qrcodes/9*.png
+public/qrcodes/0*.png

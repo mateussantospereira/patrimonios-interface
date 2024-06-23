@@ -1,0 +1,41 @@
+<h2 class="title">Importação de Patrimônios</h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div>
+    <p>Para saber mais sobre a importação de arquivos consulte as <a href="/uso">Condições de uso</a>.</p>
+</div>
+
+<div>
+    <form id="form">
+        <input type="file" id="arquivo" accept=".xlsx" required><br><br>
+        <div>
+            <button id="button" class="secondary">Importar</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../components/carregamento') %>
+
+<script>
+    const form = document.getElementById("form");
+    const carregando = document.getElementById("carregando");
+    const message = document.getElementById("message");
+
+    async function importar(file) {
+        const response = await fetch(`/patrimonio/importar`, { method: "POST", body: file });
+        const json = await response.json();
+
+        await finishLoading(() => {
+            redirecionar(json, "/listar");
+        }, form.button);
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        iniciarCarregamento(form.button, carregando);
+
+        importar(form.arquivo.files[0]);
+    });
+</script>

@@ -1,0 +1,48 @@
+<h2 class="title">Modificar <%- body.email %></h2>
+
+<%- include('../components/message', { value: "" }) %>
+
+<div class="form">
+    <form id="form">
+        <div class="form-column"></div>
+        <div class="submit">
+            <button class="secondary">Modificar</button>
+        </div>
+    </form>
+
+    <div class="end">
+        <%- include('../components/boxDelete', { label: "Confirme a exclusão do registro:", button: "Deletar",
+        route: `/registro/deletar/${body.email}`, redirect: "/registros" }) %>
+    </div>
+</div>
+
+
+
+<script src="/public/js/scripts.js"></script>
+
+<script>
+    const email = '<%= body.email %>';
+    const form = document.getElementById("form");
+    const message = document.getElementById("message");
+    const head = {
+        nome: { label: "Nome:", tag: { name: "input", type: "text" } },
+        email: { label: "E-mail:", tag: { name: "input", type: "text" } },
+        senha: { label: "Senha:", tag: { name: "input", type: "password", value: "null" } },
+        novaSenha: { label: "Nova senha (não obrigatório):", tag: { name: "input", type: "password", value: "null" } },
+        confirmarSenha: { label: "Confirmar nova senha:", tag: { name: "input", type: "password", value: "null" } }
+    };
+
+    getDataForInputs(`/registro/buscar/${email}`, head);
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        fetchRedirect(
+            `/registro/atualizar/${email}`, "PUT", form, "/registros",
+            {
+                data: ["novaSenha", "confirmarSenha"],
+                message: "Erro. A nova senha não confere."
+            }
+        );
+    });
+</script>

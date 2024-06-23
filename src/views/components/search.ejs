@@ -1,0 +1,22 @@
+<div>
+    <input type="text" id="search" placeholder="<%= placeholder %>" onkeyup="search()" size="30" />
+</div>
+
+<script>
+    function search() {
+        const input = document.getElementById("search");
+        let value = input.value.toLowerCase();
+        let table = document.getElementsByTagName("tbody")[0];
+        const linhas = table.getElementsByTagName("tr");
+
+        Object.values(linhas).forEach((linha) => {
+            let content = linha.innerHTML.toLocaleLowerCase();
+
+            if (content.includes(value)) {
+                linha.style.display = "";
+            } else {
+                linha.style.display = "none";
+            };
+        });
+    }
+</script>

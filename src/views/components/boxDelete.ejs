@@ -1,0 +1,49 @@
+<div class="box-delete">
+    <div>
+        <button class="third" id="deletar" onclick="openDelete()">
+            <%= button %>
+        </button>
+    </div>
+   
+    <div id="confirmacao" style="display: none;">
+        <div>
+            <label><%= label %></label>
+        </div>
+        <div>
+            <div class="buttons-delete">
+                <button id="cancelar" onclick="closeDelete()">Cancelar</button>
+                <button id="confirmar" class="third" ondblclick="confirmDelete()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const deletarButton = document.getElementById("deletar");
+    const confirmacao = document.getElementById("confirmacao");
+    const cancelar = document.getElementById("cancelar");
+    const confirmar = document.getElementById("confirmar");
+    const route = "<%= route %>";
+    const redirect = "<%= redirect %>";
+
+    async function deletar() {
+        const response = await fetchUrlencoded(route, "DELETE", null, true);
+        redirecionar(response, redirect);
+    }
+
+    function openDelete() {
+        deletarButton.style.display = "none";
+        confirmacao.style.display = "block";
+    }
+
+    function closeDelete() {
+        confirmacao.style.display = "none";
+        deletarButton.style.display = "block";
+    }
+
+    function confirmDelete() {
+        closeDelete();
+
+        deletar();
+    }
+</script>
